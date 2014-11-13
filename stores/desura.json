@@ -1,0 +1,43 @@
+{
+	"store": {
+		"name": "desura",
+		"homepage": "http://www.desura.com/",
+		"format": "xml"
+	},
+
+	"auth": {
+		"method": "http_post",
+		"loginurl": "https://secure.desura.com/3/memberlogin",
+		"logouturl": "https://secure.desura.com/1/memberlogout"
+	},
+
+	"authfield": {
+		"username": "username",
+		"password": "password"
+	},
+
+	"authtoken": {
+		"keys": "freeman,masterchief"
+	},
+
+	"games": {
+		"url": "https://secure.desura.com/1/memberdata",
+		"list": "/memberdata/games//game"
+	},
+
+	"game": {
+		"id": "@siteareaid",
+		"name": "name/text()",
+		"description": "summary/text()",
+		"homepage": "homepage/text()",
+		"platforms": "/memberdata/platforms/platform/games/game[@siteareaid=$game.id]/../.."
+	},
+
+	"platform": {
+		"id": "@id",
+		"win32": "100",
+		"mac32": "130",
+		"lin32": "110",
+		"lin64": "120"
+	}
+}
